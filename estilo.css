@@ -21,10 +21,15 @@ body {
 }
 
 main {
-  padding: 20px;
-  max-width: 640px;
+  /* padding: 0 40px; */
+  padding-inline: 200px;
   margin: 0 auto 64px;
   padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10;
+  
+
  
 }
 
@@ -136,3 +141,27 @@ input:checked::before{
   width: 100%;
   padding: 12px;
 }
+
+#button {
+    display: flex;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;    
+  }
+
+  #button:hover{
+    opacity: 0.8;
+
+  }
+  

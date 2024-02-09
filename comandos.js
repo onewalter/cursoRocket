@@ -52,7 +52,7 @@
       ];
       
 
-
+ 
 
   const quiz = document.querySelector('#quiz')
   const template = document.querySelector('template')
@@ -60,6 +60,8 @@
   const totalDePerguntas = perguntas.length
   const mostrarTotal = document.querySelector("#acertos span")
   mostrarTotal.textContent = nCorretas.size + ' de ' + totalDePerguntas
+  const button = document.getElementById('button');
+   
   
   for(const item of perguntas) {
     const quizItem = template.content.cloneNode(true)
@@ -71,6 +73,10 @@
       dt.querySelector('input').setAttribute('name','pergunta-' + perguntas.indexOf(item))
       dt.querySelector('input').value = item.respostas.indexOf(resposta)
 
+      // button.querySelector('span').onchange = (addEventListener)
+
+      button.addEventListener('click', () => mostrarTotal.textContent = nCorretas.size + ' de ' + totalDePerguntas);
+
       dt.querySelector('input').onchange = (event) => {
         const estaCorreta = event.target.value == item.correta
        
@@ -79,12 +85,7 @@
         {
           nCorretas.add(item)
         }
-        else
-        {
-
-        }
-      
-        mostrarTotal.textContent = nCorretas.size + ' de ' + totalDePerguntas
+        
       }
   
       quizItem.querySelector('dl').appendChild(dt)
@@ -93,6 +94,13 @@
     
     quizItem.querySelector('dl dt').remove()
     
-
+    
     quiz.appendChild(quizItem)
-}
+
+
+    
+    }
+
+
+
+
